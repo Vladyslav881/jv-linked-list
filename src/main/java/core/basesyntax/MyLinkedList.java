@@ -140,15 +140,16 @@ public class MyLinkedList<T> implements MyLinkedListInterface<T> {
             first = next;
         } else {
             previous.next = next;
-            node.prev = null;
         }
 
         if (next == null) {
             last = previous;
         } else {
             next.prev = previous;
-            node.next = null;
         }
+
+        node.prev = null;
+        node.next = null;
 
         size--;
         return removedValue;
